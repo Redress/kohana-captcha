@@ -103,7 +103,7 @@ abstract class Captcha
 		if ($group !== 'default')
 		{
 			// Load and validate default config group
-			if ( ! is_array($default = Kohana::config('captcha')->get('default')))
+			if ( ! is_array($default = Kohana::$config->load('captcha')->get('default')))
 				throw new Kohana_Exception('Captcha group not defined in :group configuration',
 					array(':group' => 'default'));
 
